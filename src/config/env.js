@@ -1,7 +1,7 @@
 // Question: Pourquoi est-il important de valider les variables d'environnement au démarrage ?
-// Réponse : 
+// Réponse : Valider les variables d'environnement au démarrage permet d'éviter des erreurs inattendues pendant l'exécution de l'application
 // Question: Que se passe-t-il si une variable requise est manquante ?
-// Réponse : 
+// Réponse : Si une variable requise est manquante, l'application risque de rencontrer des erreurs lors de son exécution.
 
 const dotenv = require('dotenv');
 dotenv.config();
@@ -14,9 +14,16 @@ const requiredEnvVars = [
 
 // Validation des variables d'environnement
 function validateEnv() {
-  // TODO: Implémenter la validation
-  // Si une variable manque, lever une erreur explicative
+  const missingVars = requiredEnvVars.filter((varName) => !process.env[varName]);
+
+  if (missingVars.length > 0) {
+    throw new Error(
+      `Missing required environment variables: ${missingVars.join(', ')}`
+    );
+  }
 }
+ 
+
 
 module.exports = {
   mongodb: {
@@ -26,5 +33,6 @@ module.exports = {
   redis: {
     uri: process.env.REDIS_URI
   },
-  port: process.env.PORT || 3000
+  port: process.env.PORT || 3000,
+  validateEnv
 };
