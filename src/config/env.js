@@ -27,7 +27,7 @@ function validateEnv() {
 
 module.exports = {
   mongodb: {
-    uri: "mongodb+srv://admin:pass@cluster0.idicj.mongodb.net/ENSET?retryWrites=true&w=majority",
+    uri: "mongodb+srv://username:password@cluster.xxxxx.mongodb.net/database?retryWrites=true&w=majority",
     dbName: "ENSET"
   },  
   redis: {
