@@ -27,9 +27,9 @@ function validateEnv() {
 
 module.exports = {
   mongodb: {
-    uri: process.env.MONGODB_URI,
-    dbName: process.env.MONGODB_DB_NAME
-  },
+    uri: "mongodb+srv://admin:admin@cluster0.idicj.mongodb.net/ENSET?retryWrites=true&w=majority",
+    dbName: "ENSET"
+  },  
   redis: {
     uri: process.env.REDIS_URI
   },
