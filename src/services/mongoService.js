@@ -1,5 +1,3 @@
-// Question: Pourquoi créer des services séparés ?
-// Réponse: Pour encapsuler la logique métier spécifique et rendre les interactions avec la base de données ou les services externes plus maintenables et isolées.
 const { ObjectId } = require("mongodb");
 const db = require("../config/db");
 

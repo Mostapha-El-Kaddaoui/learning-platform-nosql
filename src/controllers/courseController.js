@@ -1,7 +1,3 @@
-// Question: Quelle est la différence entre un contrôleur et une route ?
-// Réponse:
-// Question : Pourquoi séparer la logique métier des routes ?
-// Réponse :
 const { ObjectId } = require("mongodb");
 const db = require("../config/db");
 const mongoService = require("../services/mongoService");
